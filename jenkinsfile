@@ -1,12 +1,13 @@
-pipeline{
-agent any
-tools{
-maven 'MAVEN_home'
-}
-stages{
-stages('Build'){
-steps{
-bat 'mvn clean install'
-}
-}
+pipeline {
+    agent any
+    tools {
+        maven 'MAVEN_home'   // Make sure this name matches what you configured in Jenkins (case-sensitive)
+    }
+    stages {
+        stage('Build') {
+            steps {
+                bat 'mvn clean install'
+            }
+        }
+    }
 }
